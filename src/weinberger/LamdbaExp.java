@@ -2,6 +2,12 @@ package weinberger;
 
 import java.util.function.Consumer;
 
+/**
+ * Beispiele zum Nachschlagen rueberkopieren !
+ * 
+ * @author Guys @ Oracle
+ *
+ */
 public class LamdbaExp {
 
     public int x = 0;
