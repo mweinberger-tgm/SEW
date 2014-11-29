@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface Calculate {
 
-	public List<Double> processCalculations();
+	public List<Double> processCalculations(List<Double> values, double modifier);
 
 }

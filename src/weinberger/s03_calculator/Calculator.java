@@ -19,7 +19,7 @@ public class Calculator {
 	private Calculate operator;
 
 	/**
-	 * 
+	 * Der Konstruktor, der Addtion als Standard-Rechenoperation setzt.
 	 */
 	public Calculator() {
 		this.operator = new Addition();
@@ -27,7 +27,10 @@ public class Calculator {
 	
 	/**
 	 * 
-	 * @param value
+	 * Fuegt einen Double-Wert der Liste hinzu.
+	 * 
+	 * @param value Der Wert, der hineingespeichert werden soll.
+	 * 
 	 */
 	public void addValue(double value) {
 		values.add(value);
@@ -54,7 +57,7 @@ public class Calculator {
 	 * @return
 	 */
 	public List<Double> processCalculations() {
-		return operator.processCalculations();
+		return operator.processCalculations(values, modifier);
 	}
 
 	/**
@@ -75,17 +78,5 @@ public class Calculator {
 	 */
 	public void setCalculation(Calculate operator) {
 		this.operator = operator;
-	}
-	
-	
-	//--------------------------
-	public static void main(String[] args) {
-		Calculator test = new Calculator();
-		test.processCalculations();
-		
-		test.setCalculation(new Division());
-		
-		test.processCalculations();
-		
 	}
 }
