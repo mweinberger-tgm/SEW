@@ -48,6 +48,17 @@ public class Calculator {
 	public void setModifier(double modifier) {
 		this.modifier = modifier;
 	}
+	
+	/**
+	 * 
+	 * Implementiert zu Testzwecken, liefert den Modifier zurueck.
+	 * 
+	 * @return modifier Den Modifier-Wert
+	 * 
+	 */
+	public double getModifier() {
+		return modifier;
+	}
 
 	/**
 	 * 
@@ -75,10 +86,27 @@ public class Calculator {
 	 * 
 	 * Gibt die Werte der Liste als String aus.
 	 * 
+	 * @param values Die Liste, die als Text ausgegeben werden soll.
 	 * @return Die Werte als String.
 	 * 
 	 */
 	public String toString(List<Double> values) {
+		String out = "";
+		Iterator<Double> in = values.iterator();
+		while (in.hasNext()) {
+			out = out + in.next() + "\n";
+		}
+		return out;
+	}
+	
+	/**
+	 * 
+	 * Zu Testzwecken, gibt den Inhalt der 'values' aus.
+	 * 
+	 * @return values Die Werte der internen Liste.
+	 * 
+	 */
+	public String toString() {
 		String out = "";
 		Iterator<Double> in = values.iterator();
 		while (in.hasNext()) {

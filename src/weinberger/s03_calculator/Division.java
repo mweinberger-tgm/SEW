@@ -2,8 +2,23 @@ package weinberger.s03_calculator;
 
 import java.util.*;
 
+/**
+ * 
+ * Implementiert die Funktion, die einzelnen Zahlen aus der Liste mit dem Modifier zu dividieren.
+ * 
+ * @author Michael Weinberger 4AHITT
+ * @version 2014-11-12
+ * 
+ */
 public class Division implements Calculate {
 
+	/**
+	 * 
+	 * Die eigentliche Funktion, implementiert als Modul mithilfe des Strategy-Pattern.
+	 * 
+	 * @return out Die fertig berechnete Liste.
+	 * 
+	 */
 	public List<Double> processCalculations(List<Double> values, double modifier) {
 		List<Double> out = new Vector<Double>();
 		
