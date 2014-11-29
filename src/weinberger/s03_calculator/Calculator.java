@@ -20,11 +20,12 @@ public class Calculator {
 
 	/**
 	 * 
-	 * Der Konstruktor, der Addtion als Standard-Rechenoperation setzt.
+	 * Der Konstruktor, der Addtion als Standard-Rechenoperation setzt und den Modifier auf '1.0' festlegt.
 	 * 
 	 */
 	public Calculator() {
 		this.operator = new Addition();
+		this.modifier = 1.0;
 	}
 	
 	/**
@@ -38,6 +39,17 @@ public class Calculator {
 		values.add(value);
 	}
 
+	/**
+	 * 
+	 * Erstellt zu Testzwecken, setzt die Liste auf den Wert des Parameters. 
+	 * 
+	 * @param values Die neue Double-Liste.
+	 * 
+	 */
+	public void setValues(List<Double> values) {
+		this.values = values;
+	}
+	
 	/**
 	 * 
 	 * Setzt die Zahl, mit der die Liste manipuliert wird.
@@ -130,7 +142,10 @@ public class Calculator {
 		Calculator test = new Calculator();
 		
 		test.addValue(1.1);
-		test.addValue(44.3);
+		test.addValue(423.3);
+		test.addValue(42345.3);
+		test.addValue(41.3);
+		test.addValue(1.3);
 		
 		test.setModifier(1.0);
 		List<Double> ou = test.processCalculations();
