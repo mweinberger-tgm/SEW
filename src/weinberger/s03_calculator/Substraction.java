@@ -1,12 +1,18 @@
 package weinberger.s03_calculator;
 
-import java.util.List;
+import java.util.*;
 
 public class Substraction implements Calculate {
 
 	public List<Double> processCalculations(List<Double> values, double modifier) {
-		System.out.println("-");
-		return null;
+		List<Double> out = new Vector<Double>();
+		
+		Iterator<Double> it = values.iterator();
+		while (it.hasNext()) {
+			out.add(it.next() - modifier);
+		}
+		
+		return out;
 	}
 
 }

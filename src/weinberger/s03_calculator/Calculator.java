@@ -14,12 +14,14 @@ import java.util.*;
  */
 public class Calculator {
 
-	private List<Double> values;
+	private List<Double> values = new Vector<Double>();
 	private double modifier;
 	private Calculate operator;
 
 	/**
+	 * 
 	 * Der Konstruktor, der Addtion als Standard-Rechenoperation setzt.
+	 * 
 	 */
 	public Calculator() {
 		this.operator = new Addition();
@@ -38,7 +40,10 @@ public class Calculator {
 
 	/**
 	 * 
-	 * @param modifier
+	 * Setzt die Zahl, mit der die Liste manipuliert wird.
+	 * 
+	 * @param modifier Die mitgegebene Zahl
+	 * 
 	 */
 	public void setModifier(double modifier) {
 		this.modifier = modifier;
@@ -46,7 +51,10 @@ public class Calculator {
 
 	/**
 	 * 
-	 * @param value
+	 * Loescht einen Wert einen aus der Liste.
+	 * 
+	 * @param value Der Wert, der geloescht werden soll.
+	 * 
 	 */
 	public void removeValue(double value) {
 		values.remove(""+value);
@@ -54,7 +62,10 @@ public class Calculator {
 
 	/**
 	 * 
-	 * @return
+	 * Fuehrt die Berechnung aus mit dem gewaehlten Vorzeichen.
+	 * 
+	 * @return Die Liste mit den ausgerechneten Werten.
+	 * 
 	 */
 	public List<Double> processCalculations() {
 		return operator.processCalculations(values, modifier);
@@ -62,21 +73,40 @@ public class Calculator {
 
 	/**
 	 * 
+	 * Gibt die Werte der Liste als String aus.
+	 * 
+	 * @return Die Werte als String.
+	 * 
 	 */
-	public String toString() {
+	public String toString(List<Double> values) {
 		String out = "";
 		Iterator<Double> in = values.iterator();
 		while (in.hasNext()) {
-			out = "" + in.next() + "\n";
+			out = out + in.next() + "\n";
 		}
 		return out;
 	}
 	
 	/**
 	 * 
-	 * @param operator
+	 * Setzt die Rechenoperation fest.
+	 * 
+	 * @param operator Die gewuenschte Rechenoperation in der Schreibweise 'new [Vorzeichen]()'.
+	 * 
 	 */
 	public void setCalculation(Calculate operator) {
 		this.operator = operator;
+	}
+	
+	public static void main(String[] args) {
+		Calculator test = new Calculator();
+		
+		test.addValue(1.1);
+		test.addValue(44.3);
+		
+		test.setModifier(1.0);
+		List<Double> ou = test.processCalculations();
+		
+		System.out.println(test.toString(ou));
 	}
 }
