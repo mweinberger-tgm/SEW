@@ -52,6 +52,17 @@ public class Calculator {
 	
 	/**
 	 * 
+	 * Erstellt zu Testzwecken, liefert die aktuelle 'values'-List zurueck.
+	 * 
+	 * @return values Die derzeitige Double-Liste.
+	 * 
+	 */
+	public List<Double> getValues() {
+		return values;
+	}
+	
+	/**
+	 * 
 	 * Setzt die Zahl, mit der die Liste manipuliert wird.
 	 * 
 	 * @param modifier Die mitgegebene Zahl
@@ -80,7 +91,7 @@ public class Calculator {
 	 * 
 	 */
 	public void removeValue(double value) {
-		values.remove(""+value);
+		values.remove(value);
 	}
 
 	/**
@@ -136,20 +147,5 @@ public class Calculator {
 	 */
 	public void setCalculation(Calculate operator) {
 		this.operator = operator;
-	}
-	
-	public static void main(String[] args) {
-		Calculator test = new Calculator();
-		
-		test.addValue(1.1);
-		test.addValue(423.3);
-		test.addValue(42345.3);
-		test.addValue(41.3);
-		test.addValue(1.3);
-		
-		test.setModifier(1.0);
-		List<Double> ou = test.processCalculations();
-		
-		System.out.println(test.toString(ou));
 	}
 }

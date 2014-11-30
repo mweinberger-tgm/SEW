@@ -81,8 +81,30 @@ public class TestS03 {
 	
 	@Test
 	public void testRemoveValue() {
+		cal.removeValue(42.0);
 		out = cal.processCalculations();
 		
-		assertEquals("235.12\n235.123\n57.23\n43.0\n", cal.toString(out));
+		assertEquals("235.12\n3.4512\n235.123\n57.23\n", cal.toString(out));
+	}
+	
+	@Test
+	public void testSetValues() {
+		List<Double> in = Arrays.asList(1.0, 2.0, 3.0);
+		cal.setValues(in);
+		out = cal.processCalculations();
+		
+		assertEquals("2.0\n3.0\n4.0\n", cal.toString(out));
+	}
+	
+	@Test
+	public void testGetValues() {
+		out = cal.getValues();
+		
+		assertEquals("[234.12, 2.4512, 234.123, 56.23, 42.0]", out.toString());
+	}
+	
+	@Test
+	public void testToString() {
+		assertEquals("234.12\n2.4512\n234.123\n56.23\n42.0\n", cal.toString());
 	}
 }
